@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        /* Golden Highlight Hover Effect */
+        .project-card {
+            border: 2px solid transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37; /* Gold accent */
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3); /* Golden glow */
+        }
+        
+        /* Modal Popup Animation */
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .animate-modal {
+            animation: modalFadeIn 0.3s ease-out forwards;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>As Realty | Find Your Dream Property</title>
@@ -73,35 +95,216 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(1)">
                     <img src="images/project1.jpg" alt="New Project" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Ready to move</span>
                         <h3 class="text-xl font-bold my-2 text-gray-900">Savaliya Sky</h3>
                         <p class="text-gray-600 text-sm mb-4">Luxurious high-rise tower with grand entrance and open sky terrace garden.</p>
-                        <a href="viewproject1.html" target="_blank" class="block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">Sample Flats</a>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
                     <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
                         <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
                         <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
-                        <a href="viewproject2.html" target="_blank" class="block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">Sample Flats</a>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(3)">
                     <img src="images/project3.jpg" alt="New Project" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Ready to move</span>
                         <h3 class="text-xl font-bold my-2 text-gray-900">Raj Heritage</h3>
                         <p class="text-gray-600 text-sm mb-4">Nature-friendly township featuring beautiful landscapes and wide open spaces.</p>
-                        <a href="viewproject3.html" target="_blank" class="block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">Sample Flats</a>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(3)">
+                    <img src="images/project3.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Ready to move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Raj Heritage</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nature-friendly township featuring beautiful landscapes and wide open spaces.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div><!-- Project 6 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(3)">
+                    <img src="images/project3.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Ready to move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Raj Heritage</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nature-friendly township featuring beautiful landscapes and wide open spaces.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div><!-- Project 8 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(3)">
+                    <img src="images/project3.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Ready to move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Raj Heritage</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nature-friendly township featuring beautiful landscapes and wide open spaces.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div><!-- Project 10 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(3)">
+                    <img src="images/project3.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Ready to move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Raj Heritage</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nature-friendly township featuring beautiful landscapes and wide open spaces.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div><!-- Project 12 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 13 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(3)">
+                    <img src="images/project3.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Ready to move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Raj Heritage</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nature-friendly township featuring beautiful landscapes and wide open spaces.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div><!-- Project 14 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 15 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(3)">
+                    <img src="images/project3.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Ready to move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Raj Heritage</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nature-friendly township featuring beautiful landscapes and wide open spaces.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div><!-- Project 16 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 17 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(3)">
+                    <img src="images/project3.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Ready to move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Raj Heritage</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nature-friendly township featuring beautiful landscapes and wide open spaces.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div><!-- Project 18 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 19 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(3)">
+                    <img src="images/project3.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Ready to move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Raj Heritage</h3>
+                        <p class="text-gray-600 text-sm mb-4">Nature-friendly township featuring beautiful landscapes and wide open spaces.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 20 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 21 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" onclick="openProject(2)">
+                    <img src="images/project2.jpg" alt="New Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Ready to Move</span>
+                        <h3 class="text-xl font-bold my-2 text-gray-900">Chheda Greens</h3>
+                        <p class="text-gray-600 text-sm mb-4">Spacious 1bhk and 2bhk with ultra modern amenities with jodi options.</p>
+                        <button class="w-full block text-center bg-blue-50 text-blue-600 font-semibold py-2 rounded hover:bg-blue-600 hover:text-white transition">View Details</button>
                     </div>
                 </div>
             </div>
@@ -152,6 +355,242 @@
             &copy; 2026 AS Realty. All rights reserved.
         </div>
     </footer>
+    <!-- ================= DYNAMIC PROJECT MODAL ================= -->
+    <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-75 z-[100] hidden flex justify-center items-center p-4 backdrop-blur-sm">
+        <!-- Modal Content Box -->
+        <div class="bg-gray-100 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl animate-modal">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 bg-white hover:bg-red-500 hover:text-white text-gray-800 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold transition shadow z-10">
+                &times;
+            </button>
+            
+            <!-- JS will inject the project details here -->
+            <div id="modalBody"></div>
 
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // 1. YOUR PROJECT DATABASE (Add all 20 projects here eventually)
+        const projectsData = [
+            {
+                id: 1,
+                title: "Savaliya Sky",
+                featureImage: "images/viewproject1b.jpg",
+                featureTag: "OPEN SKY TERRACE GARDEN",
+                brochureImage: "images/viewproject1a.jpg",
+                brochureLink: "Pdf/SAVALIYA-SKY MIRA ROAD project1.pdf"
+            },
+            {
+                id: 2,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            },
+            {
+                id: 3,
+                title: "Raj Heritage",
+                featureImage: "images/project3.jpg", // Update these paths when you have them
+                featureTag: "NATURE-FRIENDLY TOWNSHIP",
+                brochureImage: "images/project3.jpg",
+                brochureLink: "#"
+            },
+            {
+                id: 4,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            },
+            {
+                id: 5,
+                title: "Raj Heritage",
+                featureImage: "images/project3.jpg", // Update these paths when you have them
+                featureTag: "NATURE-FRIENDLY TOWNSHIP",
+                brochureImage: "images/project3.jpg",
+                brochureLink: "#"
+            },
+            {
+                id: 6,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            },
+            {
+                id: 7,
+                title: "Raj Heritage",
+                featureImage: "images/project3.jpg", // Update these paths when you have them
+                featureTag: "NATURE-FRIENDLY TOWNSHIP",
+                brochureImage: "images/project3.jpg",
+                brochureLink: "#"
+            },
+            {
+                id: 8,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            },
+            {
+                id: 9,
+                title: "Raj Heritage",
+                featureImage: "images/project3.jpg", // Update these paths when you have them
+                featureTag: "NATURE-FRIENDLY TOWNSHIP",
+                brochureImage: "images/project3.jpg",
+                brochureLink: "#"
+            },
+            {
+                id: 10,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            },
+            {
+                id: 11,
+                title: "Raj Heritage",
+                featureImage: "images/project3.jpg", // Update these paths when you have them
+                featureTag: "NATURE-FRIENDLY TOWNSHIP",
+                brochureImage: "images/project3.jpg",
+                brochureLink: "#"
+            },
+            {
+                id: 12,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            },
+            {
+                id: 13,
+                title: "Raj Heritage",
+                featureImage: "images/project3.jpg", // Update these paths when you have them
+                featureTag: "NATURE-FRIENDLY TOWNSHIP",
+                brochureImage: "images/project3.jpg",
+                brochureLink: "#"
+            },
+            {
+                id: 14,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            },
+            {
+                id: 15,
+                title: "Raj Heritage",
+                featureImage: "images/project3.jpg", // Update these paths when you have them
+                featureTag: "NATURE-FRIENDLY TOWNSHIP",
+                brochureImage: "images/project3.jpg",
+                brochureLink: "#"
+            },
+            {
+                id: 16,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            },
+            {
+                id: 17,
+                title: "Raj Heritage",
+                featureImage: "images/project3.jpg", // Update these paths when you have them
+                featureTag: "NATURE-FRIENDLY TOWNSHIP",
+                brochureImage: "images/project3.jpg",
+                brochureLink: "#"
+            },
+            {
+                id: 18,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            },
+            {
+                id: 19,
+                title: "Raj Heritage",
+                featureImage: "images/project3.jpg", // Update these paths when you have them
+                featureTag: "NATURE-FRIENDLY TOWNSHIP",
+                brochureImage: "images/project3.jpg",
+                brochureLink: "#"
+            },
+            {
+                id: 20  ,
+                title: "Chheda Greens",
+                featureImage: "images/project2.jpg", // Update these paths when you have them
+                featureTag: "ULTRA MODERN AMENITIES",
+                brochureImage: "images/project2.jpg",
+                brochureLink: "#" 
+            }
+        ];
+
+        // 2. OPEN MODAL FUNCTION
+        function openProject(id) {
+            const project = projectsData.find(p => p.id === id);
+            if (!project) return;
+
+            // Generate the exact HTML layout from your viewproject1.html dynamically
+            document.getElementById('modalBody').innerHTML = `
+                <!-- Heading Area -->
+                <div class="py-8 bg-white text-center border-b rounded-t-2xl">
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900">${project.title}</h1>
+                    <p class="text-gray-500 mt-2 text-lg">Project Walkthrough & Brochure</p>
+                </div>
+
+                <!-- Gallery & Brochure Area -->
+                <div class="p-6 md:p-10">
+                    <!-- Feature Image Card -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-xl mb-8">
+                        <img src="${project.featureImage}" alt="${project.title}" class="w-full h-64 md:h-96 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm uppercase font-bold text-green-600">${project.featureTag}</span>
+                        </div>
+                    </div>
+
+                    <!-- Brochure Card -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-xl">
+                        <img src="${project.brochureImage}" alt="Brochure" class="w-full h-64 md:h-96 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm uppercase font-bold text-green-600">Download Project Brochure</span>
+                            <div class="mt-6">
+                                <a href="${project.brochureLink}" target="_blank" class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg transition">
+                                    <i class="fas fa-file-pdf"></i> View Brochure
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Show the modal and stop background scrolling
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        // 3. CLOSE MODAL FUNCTION
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore background scroll
+            document.getElementById('modalBody').innerHTML = ''; // Clear video/audio
+        }
+
+        // 4. CLICK OUTSIDE TO CLOSE
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
 </body>
       </html>
