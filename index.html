@@ -372,225 +372,126 @@
     </div>
 
     <!-- ================= JAVASCRIPT ================= -->
-    <script>
-        // 1. YOUR PROJECT DATABASE (Add all 20 projects here eventually)
-        const projectsData = [
-            {
-                id: 1,
-                title: "Savaliya Sky",
-                featureImage: "images/viewproject1b.jpg",
-                featureTag: "OPEN SKY TERRACE GARDEN",
-                brochureImage: "images/viewproject1a.jpg",
-                brochureLink: "Pdf/SAVALIYA-SKY MIRA ROAD project1.pdf"
-            },
-            {
-                id: 2,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            },
-            {
-                id: 3,
-                title: "Raj Heritage",
-                featureImage: "images/project3.jpg", // Update these paths when you have them
-                featureTag: "NATURE-FRIENDLY TOWNSHIP",
-                brochureImage: "images/project3.jpg",
-                brochureLink: "#"
-            },
-            {
-                id: 4,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            },
-            {
-                id: 5,
-                title: "Raj Heritage",
-                featureImage: "images/project3.jpg", // Update these paths when you have them
-                featureTag: "NATURE-FRIENDLY TOWNSHIP",
-                brochureImage: "images/project3.jpg",
-                brochureLink: "#"
-            },
-            {
-                id: 6,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            },
-            {
-                id: 7,
-                title: "Raj Heritage",
-                featureImage: "images/project3.jpg", // Update these paths when you have them
-                featureTag: "NATURE-FRIENDLY TOWNSHIP",
-                brochureImage: "images/project3.jpg",
-                brochureLink: "#"
-            },
-            {
-                id: 8,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            },
-            {
-                id: 9,
-                title: "Raj Heritage",
-                featureImage: "images/project3.jpg", // Update these paths when you have them
-                featureTag: "NATURE-FRIENDLY TOWNSHIP",
-                brochureImage: "images/project3.jpg",
-                brochureLink: "#"
-            },
-            {
-                id: 10,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            },
-            {
-                id: 11,
-                title: "Raj Heritage",
-                featureImage: "images/project3.jpg", // Update these paths when you have them
-                featureTag: "NATURE-FRIENDLY TOWNSHIP",
-                brochureImage: "images/project3.jpg",
-                brochureLink: "#"
-            },
-            {
-                id: 12,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            },
-            {
-                id: 13,
-                title: "Raj Heritage",
-                featureImage: "images/project3.jpg", // Update these paths when you have them
-                featureTag: "NATURE-FRIENDLY TOWNSHIP",
-                brochureImage: "images/project3.jpg",
-                brochureLink: "#"
-            },
-            {
-                id: 14,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            },
-            {
-                id: 15,
-                title: "Raj Heritage",
-                featureImage: "images/project3.jpg", // Update these paths when you have them
-                featureTag: "NATURE-FRIENDLY TOWNSHIP",
-                brochureImage: "images/project3.jpg",
-                brochureLink: "#"
-            },
-            {
-                id: 16,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            },
-            {
-                id: 17,
-                title: "Raj Heritage",
-                featureImage: "images/project3.jpg", // Update these paths when you have them
-                featureTag: "NATURE-FRIENDLY TOWNSHIP",
-                brochureImage: "images/project3.jpg",
-                brochureLink: "#"
-            },
-            {
-                id: 18,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            },
-            {
-                id: 19,
-                title: "Raj Heritage",
-                featureImage: "images/project3.jpg", // Update these paths when you have them
-                featureTag: "NATURE-FRIENDLY TOWNSHIP",
-                brochureImage: "images/project3.jpg",
-                brochureLink: "#"
-            },
-            {
-                id: 20  ,
-                title: "Chheda Greens",
-                featureImage: "images/project2.jpg", // Update these paths when you have them
-                featureTag: "ULTRA MODERN AMENITIES",
-                brochureImage: "images/project2.jpg",
-                brochureLink: "#" 
-            }
-        ];
+    <!-- Replace your current <script> tag with this -->
+<script>
+    const projectsData = [
+        // ================= PROJECT 1: PHOTOS + BROCHURE =================
+        {
+            id: 1,
+            title: "Savaliya Sky",
+            subtitle: "Project Walkthrough & Brochure",
+            type: "images",
+            images: [
+                { src: "images/viewproject1b.jpg", title: "OPEN SKY TERRACE GARDEN" },
+                { src: "images/viewproject1a.jpg", title: "LUXURIOUS TOWER ENTRANCE" }
+            ],
+            brochureLink: "Pdf/SAVALIYA-SKY MIRA ROAD project1.pdf"
+        },
 
-        // 2. OPEN MODAL FUNCTION
-        function openProject(id) {
-            const project = projectsData.find(p => p.id === id);
-            if (!project) return;
+        // ================= PROJECT 2: 2 VIDEOS + BROCHURE =================
+        {
+            id: 2,
+            title: "Chheda Greens",
+            subtitle: "1BHK & 2BHK Sample Flat Tours",
+            type: "videos",
+            videos: [
+                { title: "1BHK Sample Flat Tour", url: "https://www.youtube.com/embed/YOUR_VIDEO_ID_1" },
+                { title: "2BHK Sample Flat Tour", url: "https://www.youtube.com/embed/YOUR_VIDEO_ID_2" }
+            ],
+            brochureLink: "Pdf/chheda-greens-brochure.pdf"
+        },
 
-            // Generate the exact HTML layout from your viewproject1.html dynamically
-            document.getElementById('modalBody').innerHTML = `
-                <!-- Heading Area -->
-                <div class="py-8 bg-white text-center border-b rounded-t-2xl">
-                    <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900">${project.title}</h1>
-                    <p class="text-gray-500 mt-2 text-lg">Project Walkthrough & Brochure</p>
-                </div>
+        // ================= PROJECT 3: 2 VIDEOS + BROCHURE =================
+        {
+            id: 3,
+            title: "Raj Heritage",
+            subtitle: "1BHK & 2BHK Sample Flat Tours",
+            type: "videos",
+            videos: [
+                { title: "1BHK Sample Flat Tour", url: "https://www.youtube.com/embed/YOUR_VIDEO_ID_3" },
+                { title: "2BHK Sample Flat Tour", url: "https://www.youtube.com/embed/YOUR_VIDEO_ID_4" }
+            ],
+            brochureLink: "Pdf/raj-heritage-brochure.pdf"
+        }
+        
+        // Copy the "type: 'videos'" structure above for Projects 4 to 20
+    ];
 
-                <!-- Gallery & Brochure Area -->
-                <div class="p-6 md:p-10">
-                    <!-- Feature Image Card -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-xl mb-8">
-                        <img src="${project.featureImage}" alt="${project.title}" class="w-full h-64 md:h-96 object-cover">
-                        <div class="p-6">
-                            <span class="text-sm uppercase font-bold text-green-600">${project.featureTag}</span>
+    // OPEN MODAL FUNCTION
+    function openProject(id) {
+        const project = projectsData.find(p => p.id === id);
+        if (!project) return;
+
+        let contentHTML = `
+            <div class="py-8 bg-white text-center border-b rounded-t-2xl">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900">${project.title}</h1>
+                <p class="text-gray-500 mt-2 text-lg">${project.subtitle}</p>
+            </div>
+            <div class="p-6 md:p-10 space-y-8">
+        `;
+
+        // Renders Videos for Projects 2-20
+        if (project.type === 'videos' && project.videos) {
+            contentHTML += `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">`;
+            project.videos.forEach(vid => {
+                contentHTML += `
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-xl p-4 border border-gray-100">
+                        <span class="text-sm font-bold text-blue-600 uppercase mb-3 block">${vid.title}</span>
+                        <div class="relative w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-inner">
+                            <iframe class="w-full h-full" src="${vid.url}" allowfullscreen></iframe>
                         </div>
                     </div>
-
-                    <!-- Brochure Card -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-xl">
-                        <img src="${project.brochureImage}" alt="Brochure" class="w-full h-64 md:h-96 object-cover">
+                `;
+            });
+            contentHTML += `</div>`;
+        } 
+        // Renders 2 Images for Project 1
+        else if (project.type === 'images' && project.images) {
+            project.images.forEach(img => {
+                contentHTML += `
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                        <img src="${img.src}" alt="${img.title}" class="w-full h-64 md:h-96 object-cover">
                         <div class="p-6">
-                            <span class="text-sm uppercase font-bold text-green-600">Download Project Brochure</span>
-                            <div class="mt-6">
-                                <a href="${project.brochureLink}" target="_blank" class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg transition">
-                                    <i class="fas fa-file-pdf"></i> View Brochure
-                                </a>
-                            </div>
+                            <span class="text-sm uppercase font-bold text-green-600">${img.title}</span>
                         </div>
                     </div>
+                `;
+            });
+        }
+
+        // Renders PDF Brochure for all Projects
+        if (project.brochureLink) {
+            contentHTML += `
+                <div class="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs uppercase font-bold text-green-600 tracking-wider">Project Brochure</span>
+                        <h4 class="text-xl font-bold text-gray-800 mt-1">Download Layout Plans & Specifications</h4>
+                    </div>
+                    <a href="${project.brochureLink}" target="_blank" class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg transition whitespace-nowrap">
+                        <i class="fas fa-file-pdf"></i> View Brochure
+                    </a>
                 </div>
             `;
-
-            // Show the modal and stop background scrolling
-            document.getElementById('projectModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
         }
 
-        // 3. CLOSE MODAL FUNCTION
-        function closeModal() {
-            document.getElementById('projectModal').classList.add('hidden');
-            document.body.style.overflow = 'auto'; // Restore background scroll
-            document.getElementById('modalBody').innerHTML = ''; // Clear video/audio
-        }
+        contentHTML += `</div>`;
 
-        // 4. CLICK OUTSIDE TO CLOSE
-        document.getElementById('projectModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
-    </script>
+        document.getElementById('modalBody').innerHTML = contentHTML;
+        document.getElementById('projectModal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // CLOSE MODAL FUNCTION
+    function closeModal() {
+        document.getElementById('projectModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        document.getElementById('modalBody').innerHTML = '';
+    }
+
+    // CLOSE ON OUTSIDE CLICK
+    document.getElementById('projectModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+</script>
 </body>
       </html>
